@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Menu from './Components/Menu.js';
+import About from './Components/About';
+import Help from './Components/Help';
+import Sale from './Components/Sale';
+import Inventory from './Components/Inventory';
+import NotFound from './Components/NotFound';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <BrowserRouter> 
+      <div className="App"> 
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+         <Menu />
+          </header>
+          <Switch>  
+            <Route path="/" exact render={() => {return (<h1> Plese select the menu item above</h1>)}} />
+               <Route path="/inventory"  exact component={Inventory} />
+                <Route path="/about"  exact  component={About} />
+                <Route path="/sale"  exact  component={Sale} />
+                <Route path="/help" exact component={Help} />
+                <Route path="" component={NotFound} />
+            </Switch>
+        </div>
+        </BrowserRouter>
     );
   }
 }

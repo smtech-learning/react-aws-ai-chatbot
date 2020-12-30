@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "serverlessecommerce0f52b789": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

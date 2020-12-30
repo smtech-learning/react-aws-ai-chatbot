@@ -4,6 +4,7 @@ import "./App.css";
 import Amplify, { Auth, Interactions } from "aws-amplify";
 import { withAuthenticator, ChatBot, AmplifyTheme } from "aws-amplify-react";
 import aws_exports from "./aws-exports"; // specify the location of aws-exports.js file on your project
+
 Amplify.configure(aws_exports);
 const myTheme = {
   ...AmplifyTheme,
@@ -27,14 +28,14 @@ class App extends Component {
       <div className='App'>
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to ReactBot</h1>
+          <h1 className='App-title'>Welcome to AI Powered Chatbot</h1>
         </header>
         <p className='App-intro'>
           <ChatBot
-            title='My React Bot'
+            title='thecloudthoughts.com'
             theme={myTheme}
             botName='MakeAppointmentMOBILEHUB'
-            welcomeMessage='Welcome, how can I help you today?'
+            welcomeMessage='Welcome I am an AI powered  Robot, how can I help you today?'
             onComplete={this.handleComplete.bind(this)}
             clearOnComplete={true}
           />
@@ -44,3 +45,4 @@ class App extends Component {
   }
 }
 export default withAuthenticator(App, { includeGreetings: true });
+// export default App;

@@ -61,7 +61,6 @@ export default class Home extends Component {
             </Switch>
         </div>
         </Authenticator>
-       
     )
   }
 }
